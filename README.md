@@ -188,7 +188,8 @@ Edit
   "status": "OK",
   "data": [
     {
-      "job_title": "Software Engineer",
+     "job_title": "Software Engineer",
+    
       "employer_name": "Tech Company",
       "job_city": "San Francisco",
       "job_country": "US",
@@ -198,6 +199,7 @@ Edit
     }
   ]
 }
+
 📝 License
 
 Licensed under the MIT License.
