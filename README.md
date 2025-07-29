@@ -1,8 +1,10 @@
-📄 Skynza Jobs – README Summary
+📄 Skynza Jobs – 
 Skynza Jobs is a lightweight job search web application built using vanilla HTML, CSS, and JavaScript. It integrates the JSearch API to fetch real-time job listings and provides a clean, responsive user interface with dark/light theme support.
 
 🚀 Core Features
+
 🎯 Functionality
+
 Real-Time Job Search: Powered by the JSearch API.
 
 Advanced Filtering: Search jobs by keyword, location, and job type.
@@ -12,6 +14,7 @@ Featured Categories: Quick-access buttons for common job categories.
 Modern UI: Clean design with a steel blue and teal color scheme.
 
 💡 User Experience
+
 Dark/Light Theme Toggle: Smooth transitions with saved preferences.
 
 Mobile-First Design: Fully responsive layout for all devices.
@@ -19,6 +22,7 @@ Mobile-First Design: Fully responsive layout for all devices.
 Loading & Feedback: Polished loading animations and error handling.
 
 ⚙️ Technical Highlights
+
 No Frameworks: Built entirely with vanilla JavaScript, HTML, and CSS.
 
 Performance Optimized: Lightweight and fast.
@@ -26,6 +30,7 @@ Performance Optimized: Lightweight and fast.
 Accessible & SEO-Friendly: Semantic HTML, keyboard navigation, and screen reader support.
 
 🛠 Technologies Used
+
 Frontend: HTML5, CSS3, JavaScript (ES6+)
 
 Layout: CSS Grid, Flexbox, CSS Variables
@@ -46,6 +51,7 @@ skynza-jobs/
 ├── script.js        # API logic and user interaction
 └── README.md        # Documentation
 🧠 Key Components
+
 ThemeManager: Controls theme switching.
 
 JobSearchService: Handles job data from the API.
@@ -53,7 +59,9 @@ JobSearchService: Handles job data from the API.
 FEATURED_CATEGORIES: Customizable featured job areas.
 
 ⚡ Getting Started
+
 Local Setup
+
 Download or clone the repository.
 
 Ensure all files (index.html, styles.css, script.js) are in the same directory.
@@ -63,6 +71,7 @@ Open index.html in a browser or use a live server.
 Start searching for jobs.
 
 API Configuration
+
 To use the app with your own API key:
 
 Go to RapidAPI - JSearch
@@ -80,6 +89,7 @@ const JSEARCH_API = {
     baseUrl: 'https://jsearch.p.rapidapi.com/search'
 };
 🌐 Deployment (Static Hosting)
+
 You can deploy the app using any static hosting service such as:
 
 Netlify
@@ -97,6 +107,7 @@ Add your API key
 Publish — no build tools needed
 
 🎨 Customization Options
+
 Theme Colors
 Edit the CSS variables in :root for custom themes:
 
@@ -123,6 +134,7 @@ const FEATURED_CATEGORIES = [
     }
 ];
 📱 Browser Compatibility
+
 Chrome 90+
 
 Firefox 88+
@@ -145,6 +157,7 @@ Search Results
 Theme Toggle
 
 🤝 Contribution Guidelines
+
 Fork the repository
 
 Create a new branch (feature/your-feature)
@@ -154,6 +167,7 @@ Commit and push changes
 Open a pull request
 
 🐞 Known Issues
+
 CORS: May require configuration depending on host.
 
 API Limits: The free plan on RapidAPI may hit usage limits.
@@ -161,7 +175,9 @@ API Limits: The free plan on RapidAPI may hit usage limits.
 Mobile Safari: Some advanced CSS features may need fallbacks.
 
 📊 API Information
+
 Endpoint Used:
+
 GET /search – for retrieving job listings.
 
 Sample Response:
@@ -183,6 +199,7 @@ Edit
   ]
 }
 📝 License
+
 Licensed under the MIT License.
 
 👨‍💻 Author
