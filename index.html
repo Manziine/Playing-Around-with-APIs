@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skynza Jobs - Find Your Dream Career</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <i class="fas fa-briefcase spinning"></i>
+            <p>Searching for jobs...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-briefcase"></i>
+                    <h1>Skynza Jobs</h1>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Find Your Dream Job Today</h2>
+                    <p>Discover thousands of job opportunities from top companies worldwide</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="job-icons">
+                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-palette"></i>
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-form">
+                <div class="search-field">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="job-keyword" placeholder="Job title, skills, or company" class="search-input">
+                </div>
+                <div class="search-field">
+                    <i class="fas fa-map-marker-alt search-icon"></i>
+                    <input type="text" id="job-location" placeholder="City, state, or country" class="search-input">
+                </div>
+                <button id="search-btn" class="search-button">
+                    <i class="fas fa-search"></i>
+                    Search Jobs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Welcome Message (shown initially) -->
+            <div id="welcome-section" class="welcome-section">
+                <div class="welcome-content">
+                    <i class="fas fa-search-location"></i>
+                    <h3>Start Your Job Search</h3>
+                    <p>Enter a job title and location above to find amazing career opportunities</p>
+                </div>
+                
+                <!-- Featured Jobs Section -->
+                <div class="featured-jobs-section">
+                    <h3>Popular Job Categories</h3>
+                    <div id="featured-jobs-container" class="featured-jobs-container">
+                        <!-- Featured jobs will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="results-section" class="results-section hidden">
+                <div class="results-header">
+                    <h3 id="results-title">Job Results</h3>
+                    <div id="results-count" class="results-count"></div>
+                </div>
+                <div id="jobs-container" class="jobs-container">
+                    <!-- Job cards will be populated here -->
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div id="no-results" class="no-results hidden">
+                <div class="no-results-content">
+                    <i class="fas fa-search-minus"></i>
+                    <h3>No Jobs Found</h3>
+                    <p>Try adjusting your search criteria or exploring different keywords</p>
+                    <button id="clear-search" class="clear-button">Clear Search</button>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <h3>Search Failed</h3>
+                    <p id="error-text">Unable to search for jobs. Please try again later.</p>
+                    <button id="retry-btn" class="retry-button">Retry Search</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Skynza Jobs</h4>
+                    <p>Your gateway to amazing career opportunities</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Data Source</h4>
+                    <p>Job listings powered by <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch" target="_blank">JSearch API</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-links">
+                        <a href="https://instagram.com/m.a.n.zi_ks" target="_blank">
+                            <i class="fab fa-instagram"></i> @m.a.n.zi_ks
+                        </a>
+                        <a href="https://linkedin.com/in/arnaud-ineza-manzi" target="_blank">
+                            <i class="fab fa-linkedin"></i> Arnaud Ineza Manzi
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Skynza Jobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
