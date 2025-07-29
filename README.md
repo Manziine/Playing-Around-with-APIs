@@ -186,6 +186,7 @@ Edit
 Licensed under the MIT License.
 
 👨‍💻 Author
+
 Arnaud Ineza Manzi
 
 Instagram
