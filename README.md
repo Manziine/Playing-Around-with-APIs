@@ -138,11 +138,16 @@ TESTING LOAD BALANCING
 SECURITY & HARDENING
 
 Environment Variables : API keys stored in env, not baked into image 
+
 .gitignore includes .env to prevent accidental exposure
+
+
 Production Tip : Use Docker secrets or vaults for sensitive data
 
 
+
 PROJECT STRUCTURE
+
 /Playing-Around-with-APIs
 ├── .env                 # Environment variables (e.g., ports, secrets)
 ├── .gitignore           # Git exclusions (e.g., node_modules, .env, etc.)
@@ -156,5 +161,15 @@ PROJECT STRUCTURE
     ├── compose.yml      # Docker Compose config
     ├── lb/              # Load balancer (HAProxy?)
     └── web/             # Web server (Nginx?)
+
+🙌 Credits 
+- JSearch API — for powering job search functionality
+
+- Docker & HAProxy — for deployment and load balancing
+
+- Arnold — for building and deploying Skynza Jobs
+
+
+
 
 
