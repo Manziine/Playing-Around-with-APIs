@@ -1,0 +1,25 @@
+# Ignore environment files
+.env
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Node or frontend build (if added later)
+node_modules/
+dist/
+build/
+
+# Docker artifacts
+*.log
+*.pid
+*.sock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
