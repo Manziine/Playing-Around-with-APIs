@@ -36,6 +36,8 @@ Whether you're exploring frontend development or showcasing deployment skills, S
 | Load Balancer| HAProxy                       | Distribute traffic across backend containers |
 | Containerization | Docker                    | Package and run the app in isolated containers|
 
+DEMO VIDEO LINK : https://youtu.be/qCUB1mll0uI
+
 
 ## 📦 Deployment Overview
 
@@ -75,30 +77,84 @@ screenshot:
 Follow these steps to run Skynza Jobs locally with Docker and HAProxy.
 
 ### 1. Clone the Repository
+# Clone the repository
+git clone https://github.com/your-username/Playing-Around-with-APIs.git
+cd Playing-Around-with-APIs
 
-bash
-git clone https://github.com/your-username/skynza-jobs.git
-cd skynza-jobs
+# Build the frontend image
+docker build -t arnolddev/skynza-jobs:v1 .
 
-Build the Frontend Image
-docker build -t skynza-frontend ./frontend
+# Run two containers
+docker run -d --name web01 -p 8081:80 arnolddev/skynza-jobs:v1
+docker run -d --name web02 -p 8082:80 arnolddev/skynza-jobs:v1
 
- Run Two Frontend Containers
+Run HAProxy Load Balancer
 
-docker run -d --name web1 -p 8081:80 skynza-frontend
-docker run -d --name web2 -p 8082:80 skynza-frontend
-
-START THE load balancer (HAPROXY)
 docker run -d --name haproxy \
   --network host \
   -v "$(pwd)/haproxy.cfg":/usr/local/etc/haproxy/haproxy.cfg:ro \
   haproxy:latest
 
- Access the App
+ACCESS THE APP
+
+Visit:
 http://localhost:8080
 
-Cleanup
+DEPLOYMENT DETAILS
+Docker hub 
 
-docker stop haproxy web1 web2
-docker rm haproxy web1 web2
+REPO : hhtps://hub.docker.com/r/tufousquoimanzi/skynza-jobs
+Image name : skynza-jobs
+Tags : v1, lates
+
+BUILD COMMANDS
+
+docker build -t tufousquoimanzi/skynza-jobs:v1 .
+docker build -t tufousquoimanzi/skynza-jobs:latest .
+
+RUN COMMANDS
+
+docker run -d -p 8080:80 --env-file .env tufousquoimanzi/skynza-jobs:v1
+
+Load Balancer configuration
+
+haproxy.cfg:
+
+frontend http_front
+    bind *:8080
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server web01 127.0.0.1:8081 check
+    server web02 127.0.0.1:8082 check
+
+Reload HAproxy:
+docker restart haproxy
+
+TESTING LOAD BALANCING
+<img width="1142" height="213" alt="alternations" src="https://github.com/user-attachments/assets/375d07e3-49eb-4363-9b9c-a705473e96d2" />
+
+SECURITY & HARDENING
+
+Environment Variables : API keys stored in env, not baked into image 
+.gitignore includes .env to prevent accidental exposure
+Production Tip : Use Docker secrets or vaults for sensitive data
+
+
+PROJECT STRUCTURE
+/Playing-Around-with-APIs
+├── .env                 # Environment variables (e.g., ports, secrets)
+├── .gitignore           # Git exclusions (e.g., node_modules, .env, etc.)
+├── Dockerfile           # Likely builds the frontend or a service
+├── skynzajobs/          # Static frontend (HTML, CSS, JS)
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+└── web_infra_lab/       # Infrastructure setup
+    ├── README.md        # Instructions and documentation
+    ├── compose.yml      # Docker Compose config
+    ├── lb/              # Load balancer (HAProxy?)
+    └── web/             # Web server (Nginx?)
+
 
