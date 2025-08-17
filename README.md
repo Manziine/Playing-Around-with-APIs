@@ -146,8 +146,9 @@ Production Tip : Use Docker secrets or vaults for sensitive data
 
 
 
-PROJECT STRUCTURE
+## PROJECT STRUCTURE
 
+```
 /skynzajobs
 │   ├── index.html
 │   ├── script.js
@@ -163,7 +164,8 @@ PROJECT STRUCTURE
 .gitignore
 Dockerfile
 README.md
-  
+```
+
 
 🙌 Credits 
 - JSearch API — for powering job search functionality
