@@ -148,19 +148,22 @@ Production Tip : Use Docker secrets or vaults for sensitive data
 
 PROJECT STRUCTURE
 
-/Playing-Around-with-APIs
-├── .env                 # Environment variables (e.g., ports, secrets)
-├── .gitignore           # Git exclusions (e.g., node_modules, .env, etc.)
-├── Dockerfile           # Likely builds the frontend or a service
-├── skynzajobs/          # Static frontend (HTML, CSS, JS)
+/skynzajobs
 │   ├── index.html
 │   ├── script.js
 │   └── style.css
-└── web_infra_lab/       # Infrastructure setup
-    ├── README.md        # Instructions and documentation
-    ├── compose.yml      # Docker Compose config
-    ├── lb/              # Load balancer (HAProxy?)
-    └── web/             # Web server (Nginx?)
+│
+/web_infra_lab
+│   ├── README.md
+│   ├── compose.yml
+│   ├── lb/
+│   └── web/
+│
+.env
+.gitignore
+Dockerfile
+README.md
+  
 
 🙌 Credits 
 - JSearch API — for powering job search functionality
